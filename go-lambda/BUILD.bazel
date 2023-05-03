@@ -1,0 +1,45 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "go-lambda",
+    srcs = ["main.go"],
+    importpath = "github.com/mpierre9/goservice/go-lambda",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_aws_aws_lambda_go//events:go_default_library",
+        "@com_github_aws_aws_lambda_go//lambda:go_default_library",
+    ],
+)
+
+go_library(
+    name = "go_default_library",
+    srcs = ["main.go"],
+    importpath = "github.com/mpierre9/goservice/go-lambda",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_aws_aws_lambda_go//events:go_default_library",
+        "@com_github_aws_aws_lambda_go//lambda:go_default_library",
+    ],
+)
+
+go_library(
+    name = "go_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/mpierre9/goservice/go/go-lambda",
+    visibility = ["//visibility:private"],
+    deps = [
+        "@com_github_aws_aws_lambda_go//events",
+        "@com_github_aws_aws_lambda_go//lambda",
+    ],
+)
+
+go_library(
+    name = "go-lambda_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/mpierre9/goservice/go-lambda/go-lambda",
+    visibility = ["//visibility:private"],
+    deps = [
+        "@com_github_aws_aws_lambda_go//events",
+        "@com_github_aws_aws_lambda_go//lambda",
+    ],
+)

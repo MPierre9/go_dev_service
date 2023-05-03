@@ -1,0 +1,7 @@
+creds/*
+bazel-bin/**
+bazel-out/**
+bazel-testlogs/**
+temp_module/**
+*.tar.gz
+bazel-testlogs/ 
